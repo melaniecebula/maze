@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8005A5D2179DA2D100E5F851 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005A5D1179DA2D100E5F851 /* Default-568h@2x.png */; };
 		8006AC77179D9BF00039984A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC76179D9BEF0039984A /* Foundation.framework */; };
 		8006AC79179D9BF00039984A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC78179D9BF00039984A /* CoreGraphics.framework */; };
 		8006AC7B179D9BF00039984A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC7A179D9BF00039984A /* UIKit.framework */; };
-		8006AC7D179D9BF00039984A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC7C179D9BF00039984A /* SpriteKit.framework */; };
 		8006AC83179D9BF00039984A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8006AC81179D9BF00039984A /* InfoPlist.strings */; };
 		8006AC85179D9BF00039984A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AC84179D9BF00039984A /* main.m */; };
 		8006AC89179D9BF00039984A /* mazeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AC88179D9BF00039984A /* mazeAppDelegate.m */; };
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8005A5D1179DA2D100E5F851 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8006AC73179D9BEF0039984A /* maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8006AC76179D9BEF0039984A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8006AC78179D9BF00039984A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,7 +70,6 @@
 			files = (
 				8006AC79179D9BF00039984A /* CoreGraphics.framework in Frameworks */,
 				8006AC7B179D9BF00039984A /* UIKit.framework in Frameworks */,
-				8006AC7D179D9BF00039984A /* SpriteKit.framework in Frameworks */,
 				8006AC77179D9BF00039984A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +90,7 @@
 		8006AC6A179D9BEF0039984A = {
 			isa = PBXGroup;
 			children = (
+				8005A5D1179DA2D100E5F851 /* Default-568h@2x.png */,
 				8006AC7E179D9BF00039984A /* maze */,
 				8006ACA2179D9BF00039984A /* mazeTests */,
 				8006AC75179D9BEF0039984A /* Frameworks */,
@@ -245,6 +246,7 @@
 				8006AC96179D9BF00039984A /* Images.xcassets in Resources */,
 				8006AC94179D9BF00039984A /* Spaceship.png in Resources */,
 				8006AC8C179D9BF00039984A /* Main.storyboard in Resources */,
+				8005A5D2179DA2D100E5F851 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -378,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -471,6 +473,7 @@
 				8006ACAE179D9BF00039984A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8006ACAF179D9BF00039984A /* Build configuration list for PBXNativeTarget "mazeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +482,7 @@
 				8006ACB1179D9BF00039984A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

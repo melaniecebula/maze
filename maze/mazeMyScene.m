@@ -36,11 +36,18 @@
         playerCharacter.position = CGPointMake(50.0,50.0);
         [self addChild:playerCharacter];
         //[self addChild:myLabel];
+        
+        SKSpriteNode *platform = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(200.0, 20.0)];
+        platform.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) - 20.0);
+        platform.name = @"platform";
+        [self addChild:platform];
+        
+        
     }
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
@@ -57,5 +64,6 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
+
 
 @end
