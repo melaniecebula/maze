@@ -29,6 +29,7 @@
 		8006ACB9179DB5230039984A /* grassland.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACB8179DB5230039984A /* grassland.jpeg */; };
 		8006ACBB179DB6B70039984A /* grassland_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBA179DB6B70039984A /* grassland_2.jpeg */; };
 		8006ACBD179DC84F0039984A /* pokemonTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBC179DC84F0039984A /* pokemonTree.png */; };
+		8006ACBF179DE0470039984A /* mew_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBE179DE0470039984A /* mew_sprite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8006ACB8179DB5230039984A /* grassland.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassland.jpeg; sourceTree = "<group>"; };
 		8006ACBA179DB6B70039984A /* grassland_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassland_2.jpeg; sourceTree = "<group>"; };
 		8006ACBC179DC84F0039984A /* pokemonTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemonTree.png; sourceTree = "<group>"; };
+		8006ACBE179DE0470039984A /* mew_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mew_sprite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				8006ACB8179DB5230039984A /* grassland.jpeg */,
 				8006ACBA179DB6B70039984A /* grassland_2.jpeg */,
 				8006AC8E179D9BF00039984A /* mazeViewController.m */,
+				8006ACBE179DE0470039984A /* mew_sprite.png */,
 				8006AC90179D9BF00039984A /* mazeMyScene.h */,
 				8006AC91179D9BF00039984A /* mazeMyScene.m */,
 				8006AC93179D9BF00039984A /* Spaceship.png */,
@@ -260,6 +263,7 @@
 				8006ACBB179DB6B70039984A /* grassland_2.jpeg in Resources */,
 				8006ACB3179DAFAB0039984A /* medspeedster.png in Resources */,
 				8006ACB9179DB5230039984A /* grassland.jpeg in Resources */,
+				8006ACBF179DE0470039984A /* mew_sprite.png in Resources */,
 				8006ACB7179DB1080039984A /* pokemonTrainer.png in Resources */,
 				8006AC83179D9BF00039984A /* InfoPlist.strings in Resources */,
 				8006AC96179D9BF00039984A /* Images.xcassets in Resources */,

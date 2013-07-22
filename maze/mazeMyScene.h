@@ -8,11 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface mazeMyScene : SKScene
+@interface mazeMyScene : SKScene <SKPhysicsContactDelegate>
 
 typedef enum : uint8_t {
     ColliderTypeHero             = 1,
-
+    ColliderTypePokemon          = 2,
     ColliderTypeWall             = 8,
 };
 

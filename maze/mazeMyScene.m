@@ -8,8 +8,9 @@
 
 #import "mazeMyScene.h"
 @interface mazeMyScene () {
- SKSpriteNode *playerCharacter;
-    SKSpriteNode *wallNode;
+    SKSpriteNode *playerCharacter;
+
+    SKSpriteNode *mew;
     
 }
 
@@ -20,6 +21,7 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        self.physicsWorld.contactDelegate = self;
         
         self.backgroundColor = [SKColor colorWithRed:0.1 green:0.35 blue:0.1 alpha:1.0];
         playerCharacter = [SKSpriteNode spriteNodeWithImageNamed:@"pokemonTrainer"];
@@ -34,15 +36,24 @@
         playerCharacter.physicsBody.affectedByGravity = NO;
         playerCharacter.physicsBody.usesPreciseCollisionDetection = YES;
         playerCharacter.physicsBody.allowsRotation = NO;
+        playerCharacter.physicsBody.contactTestBitMask = ColliderTypePokemon;
         
         [self addChild:playerCharacter];
 
-        wallNode = [SKSpriteNode spriteNodeWithImageNamed:@"pokemonTree"];
-        wallNode.size = CGSizeMake(30.0, 30.0);
         
-        wallNode.position = CGPointMake(CGRectGetMidX(self.frame), 80.0);
-        [self addChild:wallNode];
+        mew = [SKSpriteNode spriteNodeWithImageNamed:@"mew_sprite.png"];
+        mew.size = CGSizeMake(15.0, 15.0);
+        mew.position = CGPointMake(30.0, 400);
+        mew.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
+        mew.physicsBody.categoryBitMask = ColliderTypePokemon;
+        mew.physicsBody.collisionBitMask = ColliderTypeWall | ColliderTypePokemon;
+        mew.physicsBody.usesPreciseCollisionDetection = YES;
+        mew.physicsBody.allowsRotation = NO;
+        mew.physicsBody.contactTestBitMask = ColliderTypeHero;
         
+        [self addChild:mew];
+        
+        [self createTreeWithPosition:(CGPointMake(CGRectGetMidX(self.frame), 80))];
         //bottom left corner:
         [self createTreeWithPosition:(CGPointMake(0.0, 30.0))];
         [self createTreeWithPosition:(CGPointMake(30.0, 0.0))];
@@ -105,6 +116,7 @@
         [self createTreeWithPosition:(CGPointMake(105.0, 410.0))];
         [self createTreeWithPosition:(CGPointMake(220.0, 460.0))];
         [self createTreeWithPosition:(CGPointMake(190.0, 450.0))];
+        [self createTreeWithPosition:(CGPointMake(75.0, 410.0))];
         
         //top left
         [self createTreeWithPosition:(CGPointMake(60.0, 390.0))];
@@ -142,17 +154,7 @@
 
 
 -(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-    //TODO:  make sure NONE of the trees can be yolo'd through
-    
-    wallNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
-    wallNode.physicsBody.dynamic = NO;
-    wallNode.physicsBody.categoryBitMask = ColliderTypeWall;
-    wallNode.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
-    wallNode.physicsBody.affectedByGravity = NO;
-    wallNode.physicsBody.usesPreciseCollisionDetection = YES;
-    wallNode.physicsBody.allowsRotation = NO;
-    
+
     
 }
 
@@ -161,10 +163,10 @@
     tree.size = CGSizeMake(30.0, 30.0);
     tree.position = p;
     
-    tree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
+    tree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(33.0, 33.0)];
     tree.physicsBody.dynamic = NO;
     tree.physicsBody.categoryBitMask = ColliderTypeWall;
-    tree.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
+    tree.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall | ColliderTypePokemon;
     tree.physicsBody.affectedByGravity = NO;
     tree.physicsBody.usesPreciseCollisionDetection = YES;
     tree.physicsBody.allowsRotation = NO;
@@ -173,5 +175,8 @@
     
 }
 
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    NSLog(@"You found the pokemon!");
+}
 
 @end
