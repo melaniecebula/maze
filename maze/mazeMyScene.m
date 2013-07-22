@@ -21,40 +21,41 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-
+        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.35 blue:0.1 alpha:1.0];
+        playerCharacter = [SKSpriteNode spriteNodeWithImageNamed:@"pokemonTrainer"];
         
-        playerCharacter = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+        playerCharacter.size = CGSizeMake(30.0,30.0);
         
-        playerCharacter.size = CGSizeMake(10.0,10.0);
+        playerCharacter.position = CGPointMake(CGRectGetMidX(self.frame),50.0);
         
-        playerCharacter.position = CGPointMake(50.0,50.0);
-        
-        playerCharacter.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(10.0, 10.)];
+        playerCharacter.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.)];
         playerCharacter.physicsBody.categoryBitMask = ColliderTypeHero;
         playerCharacter.physicsBody.collisionBitMask = ColliderTypeWall;
         playerCharacter.physicsBody.affectedByGravity = NO;
         playerCharacter.physicsBody.usesPreciseCollisionDetection = YES;
         
-        SKAction *action = [SKAction moveByX:0
-                                           y:300 duration:3.0];
-        [playerCharacter runAction:action];
         
         [self addChild:playerCharacter];
+
+        wallNode = [SKSpriteNode spriteNodeWithImageNamed:@"pokemonTree"];
+        wallNode.size = CGSizeMake(30.0, 30.0);
         
-        wallNode = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(100.0, 10.0)];
-        
-        wallNode.position = CGPointMake(20.0, CGRectGetMidY(self.frame));
+        wallNode.position = CGPointMake(CGRectGetMidX(self.frame), 80.0);
         [self addChild:wallNode];
-
-
         
+    [self createTreeWithPosition:(CGPointMake(90.0, 50.0))];
+    [self createTreeWithPosition:(CGPointMake(90.0, 80.0))];
+    [self createTreeWithPosition:(CGPointMake(90.0, 110.0))];
+    
+    [self createTreeWithPosition:(CGPointMake(200.0, 50.0))];
+    [self createTreeWithPosition:(CGPointMake(30.0, 250.0))];
+    [self createTreeWithPosition:(CGPointMake(250.0, 50.0))];
         
     }
     return self;
 }
 
-/*
+
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     
@@ -64,17 +65,17 @@
         playerCharacter.position = location;
         
         SKAction *action = [SKAction moveTo:location duration:1.0];
-        
+        [playerCharacter runAction:action];
         
     }
 }
 
-*/
+
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 
-    wallNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 10.0)];
+    wallNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
     wallNode.physicsBody.dynamic = NO;
     wallNode.physicsBody.categoryBitMask = ColliderTypeWall;
     wallNode.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
@@ -82,5 +83,22 @@
     wallNode.physicsBody.usesPreciseCollisionDetection = YES;
     
 }
+
+-(void)createTreeWithPosition:(CGPoint)p {
+    SKSpriteNode *tree = [SKSpriteNode spriteNodeWithImageNamed:@"pokemonTree"];
+    tree.size = CGSizeMake(30.0, 30.0);
+    tree.position = p;
+    
+    tree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
+    tree.physicsBody.dynamic = NO;
+    tree.physicsBody.categoryBitMask = ColliderTypeWall;
+    tree.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
+    tree.physicsBody.affectedByGravity = NO;
+    tree.physicsBody.usesPreciseCollisionDetection = YES;
+
+    [self addChild:tree];
+    
+}
+
 
 @end
