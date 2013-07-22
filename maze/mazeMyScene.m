@@ -33,7 +33,7 @@
         playerCharacter.physicsBody.collisionBitMask = ColliderTypeWall;
         playerCharacter.physicsBody.affectedByGravity = NO;
         playerCharacter.physicsBody.usesPreciseCollisionDetection = YES;
-        
+        playerCharacter.physicsBody.allowsRotation = NO;
         
         [self addChild:playerCharacter];
 
@@ -43,14 +43,55 @@
         wallNode.position = CGPointMake(CGRectGetMidX(self.frame), 80.0);
         [self addChild:wallNode];
         
-    [self createTreeWithPosition:(CGPointMake(90.0, 50.0))];
-    [self createTreeWithPosition:(CGPointMake(90.0, 80.0))];
-    [self createTreeWithPosition:(CGPointMake(90.0, 110.0))];
-    
-    [self createTreeWithPosition:(CGPointMake(200.0, 50.0))];
-    [self createTreeWithPosition:(CGPointMake(30.0, 250.0))];
-    [self createTreeWithPosition:(CGPointMake(250.0, 50.0))];
+        //bottom left corner:
+        [self createTreeWithPosition:(CGPointMake(0.0, 30.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 0.0))];
         
+        //vertical column left of middle:
+        [self createTreeWithPosition:(CGPointMake(90.0, 50.0))];
+        [self createTreeWithPosition:(CGPointMake(90.0, 80.0))];
+        [self createTreeWithPosition:(CGPointMake(90.0, 110.0))];
+        [self createTreeWithPosition:(CGPointMake(90.0, 140.0))];
+        [self createTreeWithPosition:(CGPointMake(90.0, 170.0))];
+        [self createTreeWithPosition:(CGPointMake(90.0, 200.0))];
+        [self createTreeWithPosition:(CGPointMake(60.0, 200.0))];
+        [self createTreeWithPosition:(CGPointMake(60.0, 230.0))];
+        [self createTreeWithPosition:(CGPointMake(60.0, 260.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 260.0))];
+        [self createTreeWithPosition:(CGPointMake(0.0, 260.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 140.0))];
+  
+ 
+        //second bottom left corner row:
+        [self createTreeWithPosition:(CGPointMake(30.0, 90.0))];
+        [self createTreeWithPosition:(CGPointMake(0.0, 90.0))];
+        [self createTreeWithPosition:(CGPointMake(00.0, 120.0))];
+        
+        [self createTreeWithPosition:(CGPointMake(190.0, 50.0))];
+        [self createTreeWithPosition:(CGPointMake(190.0, 80.0))];
+        [self createTreeWithPosition:(CGPointMake(190.0, 20.0))];
+        [self createTreeWithPosition:(CGPointMake(220.0, 50.0))];
+        
+        //right top of mid:
+        [self createTreeWithPosition:(CGPointMake(130.0, 175.0))];
+        [self createTreeWithPosition:(CGPointMake(190.0, 145))];
+        [self createTreeWithPosition:(CGPointMake(160.0, 145))];
+        [self createTreeWithPosition:(CGPointMake(220.0, 145))];
+        [self createTreeWithPosition:(CGPointMake(220.0, 175))];
+        [self createTreeWithPosition:(CGPointMake(250, 145))];
+        
+        //right second from bottom corner:
+        [self createTreeWithPosition:(CGPointMake(300.0, 90.0))];
+        [self createTreeWithPosition:(CGPointMake(300.0, 60.0))];
+        [self createTreeWithPosition:(CGPointMake(300.0, 190.0))];
+        [self createTreeWithPosition:(CGPointMake(300.0, 220.0))];
+        [self createTreeWithPosition:(CGPointMake(270.0, 230.0))];
+        [self createTreeWithPosition:(CGPointMake(270.0, 260.0))];
+        
+        //center trees
+        [self createTreeWithPosition:(CGPointMake(195.0, 195.0))];
+        [self createTreeWithPosition:(CGPointMake(195.0, 225.0))];
+        [self createTreeWithPosition:(CGPointMake(165.0, 225.0))];
     }
     return self;
 }
@@ -74,13 +115,16 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-
+    //TODO:  make sure NONE of the trees can be yolo'd through
+    
     wallNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
     wallNode.physicsBody.dynamic = NO;
     wallNode.physicsBody.categoryBitMask = ColliderTypeWall;
     wallNode.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
     wallNode.physicsBody.affectedByGravity = NO;
     wallNode.physicsBody.usesPreciseCollisionDetection = YES;
+    wallNode.physicsBody.allowsRotation = NO;
+    
     
 }
 
@@ -95,7 +139,8 @@
     tree.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
     tree.physicsBody.affectedByGravity = NO;
     tree.physicsBody.usesPreciseCollisionDetection = YES;
-
+    tree.physicsBody.allowsRotation = NO;
+    
     [self addChild:tree];
     
 }
