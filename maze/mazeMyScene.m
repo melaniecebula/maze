@@ -92,6 +92,34 @@
         [self createTreeWithPosition:(CGPointMake(195.0, 195.0))];
         [self createTreeWithPosition:(CGPointMake(195.0, 225.0))];
         [self createTreeWithPosition:(CGPointMake(165.0, 225.0))];
+        [self createTreeWithPosition:(CGPointMake(165.0, 255.0))];
+        [self createTreeWithPosition:(CGPointMake(135.0, 255.0))];
+        [self createTreeWithPosition:(CGPointMake(135.0, 285.0))];
+        [self createTreeWithPosition:(CGPointMake(135.0, 315.0))];
+        
+        //top center
+        [self createTreeWithPosition:(CGPointMake(135.0, 380.0))];
+        [self createTreeWithPosition:(CGPointMake(165.0, 380.0))];
+        [self createTreeWithPosition:(CGPointMake(195.0, 360.0))];
+        [self createTreeWithPosition:(CGPointMake(135.0, 410.0))];
+        [self createTreeWithPosition:(CGPointMake(105.0, 410.0))];
+        [self createTreeWithPosition:(CGPointMake(220.0, 460.0))];
+        [self createTreeWithPosition:(CGPointMake(190.0, 450.0))];
+        
+        //top left
+        [self createTreeWithPosition:(CGPointMake(60.0, 390.0))];
+        [self createTreeWithPosition:(CGPointMake(60.0, 360.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 360.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 330.0))];
+        [self createTreeWithPosition:(CGPointMake(30.0, 450.0))];
+        [self createTreeWithPosition:(CGPointMake(0.0, 370.0))];
+        
+        //top right
+        [self createTreeWithPosition:(CGPointMake(300.0, 300.0))];
+        [self createTreeWithPosition:(CGPointMake(300.0, 360.0))];
+        [self createTreeWithPosition:(CGPointMake(270.0, 390.0))];
+        [self createTreeWithPosition:(CGPointMake(270.0, 420.0))];
+        [self createTreeWithPosition:(CGPointMake(300.0, 450.0))];
     }
     return self;
 }
