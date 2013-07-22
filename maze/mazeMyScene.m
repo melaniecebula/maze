@@ -7,6 +7,12 @@
 //
 
 #import "mazeMyScene.h"
+@interface mazeMyScene () {
+ SKSpriteNode *playerCharacter;
+}
+
+
+@end
 
 @implementation mazeMyScene
 
@@ -15,15 +21,21 @@
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        
+        /*
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         
         myLabel.text = @"Hello, World!";
         myLabel.fontSize = 30;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
+         */
+        playerCharacter = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
         
-        [self addChild:myLabel];
+        playerCharacter.size = CGSizeMake(10.0,10.0);
+        
+        playerCharacter.position = CGPointMake(50.0,50.0);
+        [self addChild:playerCharacter];
+        //[self addChild:myLabel];
     }
     return self;
 }
@@ -34,15 +46,11 @@
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+        playerCharacter.position = location;
         
-        sprite.position = location;
+        SKAction *action = [SKAction moveTo:location duration:1.0];
         
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
         
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
     }
 }
 
