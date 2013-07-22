@@ -9,8 +9,9 @@
 #import "mazeMyScene.h"
 @interface mazeMyScene () {
  SKSpriteNode *playerCharacter;
+    SKSpriteNode *wallNode;
+    
 }
-
 
 @end
 
@@ -21,34 +22,41 @@
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        /*
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-         */
         playerCharacter = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
         
         playerCharacter.size = CGSizeMake(10.0,10.0);
         
         playerCharacter.position = CGPointMake(50.0,50.0);
-        [self addChild:playerCharacter];
-        //[self addChild:myLabel];
         
-        SKSpriteNode *platform = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(200.0, 20.0)];
-        platform.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) - 20.0);
-        platform.name = @"platform";
-        [self addChild:platform];
+        playerCharacter.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(10.0, 10.)];
+        playerCharacter.physicsBody.categoryBitMask = ColliderTypeHero;
+        playerCharacter.physicsBody.collisionBitMask = ColliderTypeWall;
+        playerCharacter.physicsBody.affectedByGravity = NO;
+        playerCharacter.physicsBody.usesPreciseCollisionDetection = YES;
+        
+        SKAction *action = [SKAction moveByX:0
+                                           y:300 duration:3.0];
+        [playerCharacter runAction:action];
+        
+        [self addChild:playerCharacter];
+        
+        wallNode = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(100.0, 10.0)];
+        
+        wallNode.position = CGPointMake(20.0, CGRectGetMidY(self.frame));
+        [self addChild:wallNode];
+
+
         
         
     }
     return self;
 }
 
+/*
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
+    
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
@@ -61,9 +69,18 @@
     }
 }
 
+*/
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-}
 
+    wallNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 10.0)];
+    wallNode.physicsBody.dynamic = NO;
+    wallNode.physicsBody.categoryBitMask = ColliderTypeWall;
+    wallNode.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall;
+    wallNode.physicsBody.affectedByGravity = NO;
+    wallNode.physicsBody.usesPreciseCollisionDetection = YES;
+    
+}
 
 @end

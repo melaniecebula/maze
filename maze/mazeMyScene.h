@@ -10,4 +10,10 @@
 
 @interface mazeMyScene : SKScene
 
+typedef enum : uint8_t {
+    ColliderTypeHero             = 1,
+
+    ColliderTypeWall             = 8,
+};
+
 @end
