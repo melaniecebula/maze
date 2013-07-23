@@ -13,6 +13,8 @@
 
     SKSpriteNode *mew;
     SKLabelNode *myLabel;
+    SKSpriteNode *butterfree;
+    SKSpriteNode *pikachu;
     int count;
 }
 + (SKPhysicsJointPin *)jointWithBodyA:(SKPhysicsBody *)bodyA bodyB:(SKPhysicsBody *)bodyB anchor:(CGPoint)anchor;
@@ -65,9 +67,38 @@
         mew.physicsBody.collisionBitMask = ColliderTypeWall | ColliderTypePokemon;
         mew.physicsBody.usesPreciseCollisionDetection = YES;
         mew.physicsBody.allowsRotation = NO;
+        mew.physicsBody.affectedByGravity = NO;
         mew.physicsBody.contactTestBitMask = ColliderTypeHero;
         
         [self addChild:mew];
+        
+        
+        butterfree = [SKSpriteNode spriteNodeWithImageNamed:@"butterfree.gif"];
+        butterfree.size = CGSizeMake(15.0, 15.0);
+        butterfree.position = CGPointMake(30.0, 230);
+        butterfree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
+        butterfree.physicsBody.categoryBitMask = ColliderTypePokemon;
+        butterfree.physicsBody.collisionBitMask = ColliderTypeWall | ColliderTypePokemon;
+        butterfree.physicsBody.usesPreciseCollisionDetection = YES;
+        butterfree.physicsBody.allowsRotation = NO;
+        butterfree.physicsBody.affectedByGravity = NO;
+        butterfree.physicsBody.contactTestBitMask = ColliderTypeHero;
+        
+        [self addChild:butterfree];
+        
+        
+        pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu.gif"];
+        pikachu.size = CGSizeMake(15.0, 15.0);
+        pikachu.position = CGPointMake(130.0, 220);
+        pikachu.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
+        pikachu.physicsBody.categoryBitMask = ColliderTypePokemon;
+        pikachu.physicsBody.collisionBitMask = ColliderTypeWall | ColliderTypePokemon;
+        pikachu.physicsBody.usesPreciseCollisionDetection = YES;
+        pikachu.physicsBody.allowsRotation = NO;
+        pikachu.physicsBody.affectedByGravity = NO;
+        pikachu.physicsBody.contactTestBitMask = ColliderTypeHero;
+        
+        [self addChild:pikachu];
         
         [self createTreeWithPosition:(CGPointMake(CGRectGetMidX(self.frame), 80))];
         //bottom left corner:
@@ -139,7 +170,7 @@
         [self createTreeWithPosition:(CGPointMake(60.0, 360.0))];
         [self createTreeWithPosition:(CGPointMake(30.0, 360.0))];
         [self createTreeWithPosition:(CGPointMake(30.0, 330.0))];
-        [self createTreeWithPosition:(CGPointMake(30.0, 450.0))];
+        //[self createTreeWithPosition:(CGPointMake(30.0, 450.0))];
         [self createTreeWithPosition:(CGPointMake(0.0, 370.0))];
         
         //top right
@@ -204,10 +235,10 @@
      If necessary, configure the joint object’s properties.
      Add the joint to the scene by calling the scene SKPhysicsWorld object’s addJoint: method.
      */
-    /*
-    SKPhysicsJointPin *newPin = [SKPhysicsJointPin jointWithBodyA:playerCharacter bodyB: mew anchor:(CGPointMake(150.0,150.0))];
+
+    SKPhysicsJointPin *newPin = [SKPhysicsJointPin jointWithBodyA:[contact bodyA] bodyB: [contact bodyB] anchor:(CGPointMake(150.0,150.0))];
     [self.physicsWorld addJoint:newPin];
-     */
+    
 }
 
 @end

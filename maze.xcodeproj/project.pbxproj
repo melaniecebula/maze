@@ -27,6 +27,8 @@
 		8006ACBD179DC84F0039984A /* pokemonTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBC179DC84F0039984A /* pokemonTree.png */; };
 		8006ACBF179DE0470039984A /* mew_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBE179DE0470039984A /* mew_sprite.png */; };
 		8006ACC0179DF0430039984A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC7C179D9BF00039984A /* SpriteKit.framework */; };
+		8006ACC2179F24C50039984A /* butterfree.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACC1179F24C50039984A /* butterfree.gif */; };
+		8006ACC4179F273B0039984A /* pikachu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACC3179F273B0039984A /* pikachu.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		8006ACB6179DB1080039984A /* pokemonTrainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemonTrainer.png; sourceTree = "<group>"; };
 		8006ACBC179DC84F0039984A /* pokemonTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemonTree.png; sourceTree = "<group>"; };
 		8006ACBE179DE0470039984A /* mew_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mew_sprite.png; sourceTree = "<group>"; };
+		8006ACC1179F24C50039984A /* butterfree.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = butterfree.gif; sourceTree = "<group>"; };
+		8006ACC3179F273B0039984A /* pikachu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pikachu.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +140,9 @@
 				8006AC8E179D9BF00039984A /* mazeViewController.m */,
 				8006ACBE179DE0470039984A /* mew_sprite.png */,
 				8006AC90179D9BF00039984A /* mazeMyScene.h */,
+				8006ACC3179F273B0039984A /* pikachu.gif */,
 				8006AC91179D9BF00039984A /* mazeMyScene.m */,
+				8006ACC1179F24C50039984A /* butterfree.gif */,
 				8006ACB6179DB1080039984A /* pokemonTrainer.png */,
 				8006AC95179D9BF00039984A /* Images.xcassets */,
 				8006AC7F179D9BF00039984A /* Supporting Files */,
@@ -252,6 +258,8 @@
 			files = (
 				8006ACBF179DE0470039984A /* mew_sprite.png in Resources */,
 				8006ACB7179DB1080039984A /* pokemonTrainer.png in Resources */,
+				8006ACC4179F273B0039984A /* pikachu.gif in Resources */,
+				8006ACC2179F24C50039984A /* butterfree.gif in Resources */,
 				8006AC83179D9BF00039984A /* InfoPlist.strings in Resources */,
 				8006AC96179D9BF00039984A /* Images.xcassets in Resources */,
 				8006AC8C179D9BF00039984A /* Main.storyboard in Resources */,
