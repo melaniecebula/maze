@@ -16,4 +16,5 @@ typedef enum : uint8_t {
     ColliderTypeWall             = 8,
 };
 
+
 @end

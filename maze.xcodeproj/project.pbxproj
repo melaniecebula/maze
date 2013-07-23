@@ -17,19 +17,16 @@
 		8006AC8C179D9BF00039984A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8006AC8A179D9BF00039984A /* Main.storyboard */; };
 		8006AC8F179D9BF00039984A /* mazeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AC8E179D9BF00039984A /* mazeViewController.m */; };
 		8006AC92179D9BF00039984A /* mazeMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006AC91179D9BF00039984A /* mazeMyScene.m */; };
-		8006AC94179D9BF00039984A /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006AC93179D9BF00039984A /* Spaceship.png */; };
 		8006AC96179D9BF00039984A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8006AC95179D9BF00039984A /* Images.xcassets */; };
 		8006AC9D179D9BF00039984A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC9C179D9BF00039984A /* XCTest.framework */; };
 		8006AC9E179D9BF00039984A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC76179D9BEF0039984A /* Foundation.framework */; };
 		8006AC9F179D9BF00039984A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC7A179D9BF00039984A /* UIKit.framework */; };
 		8006ACA7179D9BF00039984A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACA5179D9BF00039984A /* InfoPlist.strings */; };
 		8006ACA9179D9BF00039984A /* mazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8006ACA8179D9BF00039984A /* mazeTests.m */; };
-		8006ACB3179DAFAB0039984A /* medspeedster.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACB2179DAFAB0039984A /* medspeedster.png */; };
 		8006ACB7179DB1080039984A /* pokemonTrainer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACB6179DB1080039984A /* pokemonTrainer.png */; };
-		8006ACB9179DB5230039984A /* grassland.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACB8179DB5230039984A /* grassland.jpeg */; };
-		8006ACBB179DB6B70039984A /* grassland_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBA179DB6B70039984A /* grassland_2.jpeg */; };
 		8006ACBD179DC84F0039984A /* pokemonTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBC179DC84F0039984A /* pokemonTree.png */; };
 		8006ACBF179DE0470039984A /* mew_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 8006ACBE179DE0470039984A /* mew_sprite.png */; };
+		8006ACC0179DF0430039984A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006AC7C179D9BF00039984A /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,17 +57,13 @@
 		8006AC8E179D9BF00039984A /* mazeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mazeViewController.m; sourceTree = "<group>"; };
 		8006AC90179D9BF00039984A /* mazeMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mazeMyScene.h; sourceTree = "<group>"; };
 		8006AC91179D9BF00039984A /* mazeMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mazeMyScene.m; sourceTree = "<group>"; };
-		8006AC93179D9BF00039984A /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		8006AC95179D9BF00039984A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8006AC9B179D9BF00039984A /* mazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8006AC9C179D9BF00039984A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8006ACA4179D9BF00039984A /* mazeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mazeTests-Info.plist"; sourceTree = "<group>"; };
 		8006ACA6179D9BF00039984A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8006ACA8179D9BF00039984A /* mazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mazeTests.m; sourceTree = "<group>"; };
-		8006ACB2179DAFAB0039984A /* medspeedster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medspeedster.png; sourceTree = "<group>"; };
 		8006ACB6179DB1080039984A /* pokemonTrainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemonTrainer.png; sourceTree = "<group>"; };
-		8006ACB8179DB5230039984A /* grassland.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassland.jpeg; sourceTree = "<group>"; };
-		8006ACBA179DB6B70039984A /* grassland_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassland_2.jpeg; sourceTree = "<group>"; };
 		8006ACBC179DC84F0039984A /* pokemonTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokemonTree.png; sourceTree = "<group>"; };
 		8006ACBE179DE0470039984A /* mew_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mew_sprite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8006ACC0179DF0430039984A /* SpriteKit.framework in Frameworks */,
 				8006AC79179D9BF00039984A /* CoreGraphics.framework in Frameworks */,
 				8006AC7B179D9BF00039984A /* UIKit.framework in Frameworks */,
 				8006AC77179D9BF00039984A /* Foundation.framework in Frameworks */,
@@ -134,19 +128,15 @@
 		8006AC7E179D9BF00039984A /* maze */ = {
 			isa = PBXGroup;
 			children = (
-				8006ACB2179DAFAB0039984A /* medspeedster.png */,
 				8006AC87179D9BF00039984A /* mazeAppDelegate.h */,
 				8006AC88179D9BF00039984A /* mazeAppDelegate.m */,
 				8006AC8A179D9BF00039984A /* Main.storyboard */,
 				8006AC8D179D9BF00039984A /* mazeViewController.h */,
 				8006ACBC179DC84F0039984A /* pokemonTree.png */,
-				8006ACB8179DB5230039984A /* grassland.jpeg */,
-				8006ACBA179DB6B70039984A /* grassland_2.jpeg */,
 				8006AC8E179D9BF00039984A /* mazeViewController.m */,
 				8006ACBE179DE0470039984A /* mew_sprite.png */,
 				8006AC90179D9BF00039984A /* mazeMyScene.h */,
 				8006AC91179D9BF00039984A /* mazeMyScene.m */,
-				8006AC93179D9BF00039984A /* Spaceship.png */,
 				8006ACB6179DB1080039984A /* pokemonTrainer.png */,
 				8006AC95179D9BF00039984A /* Images.xcassets */,
 				8006AC7F179D9BF00039984A /* Supporting Files */,
@@ -260,14 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8006ACBB179DB6B70039984A /* grassland_2.jpeg in Resources */,
-				8006ACB3179DAFAB0039984A /* medspeedster.png in Resources */,
-				8006ACB9179DB5230039984A /* grassland.jpeg in Resources */,
 				8006ACBF179DE0470039984A /* mew_sprite.png in Resources */,
 				8006ACB7179DB1080039984A /* pokemonTrainer.png in Resources */,
 				8006AC83179D9BF00039984A /* InfoPlist.strings in Resources */,
 				8006AC96179D9BF00039984A /* Images.xcassets in Resources */,
-				8006AC94179D9BF00039984A /* Spaceship.png in Resources */,
 				8006AC8C179D9BF00039984A /* Main.storyboard in Resources */,
 				8005A5D2179DA2D100E5F851 /* Default-568h@2x.png in Resources */,
 				8006ACBD179DC84F0039984A /* pokemonTree.png in Resources */,

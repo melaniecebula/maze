@@ -7,13 +7,15 @@
 //
 
 #import "mazeMyScene.h"
+@class SKPhysicsJointPin;
 @interface mazeMyScene () {
     SKSpriteNode *playerCharacter;
 
     SKSpriteNode *mew;
-    
+    SKLabelNode *myLabel;
+    int count;
 }
-
++ (SKPhysicsJointPin *)jointWithBodyA:(SKPhysicsBody *)bodyA bodyB:(SKPhysicsBody *)bodyB anchor:(CGPoint)anchor;
 @end
 
 @implementation mazeMyScene
@@ -21,6 +23,20 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        
+        count = 0;
+        
+        myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica Neue"];
+
+        myLabel.text = [NSString stringWithFormat: @"Pokemon: %d", count];
+        
+        myLabel.fontSize = 10;
+        myLabel.position = CGPointMake(250.0, 20.0);
+        
+        [self addChild:myLabel];
+
+        
+        
         self.physicsWorld.contactDelegate = self;
         
         self.backgroundColor = [SKColor colorWithRed:0.1 green:0.35 blue:0.1 alpha:1.0];
@@ -177,6 +193,21 @@
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     NSLog(@"You found the pokemon!");
+    count = count + 1;
+    myLabel.text = [NSString stringWithFormat: @"Pokemon: %d", count];
+    /*
+     To use a physics joint, you follow these steps:
+     
+     Create two physics bodies.
+     Attach the physics bodies to a pair of SKNode objects in the scene.
+     Create a joint object using one of the subclasses listed in Table 1.
+     If necessary, configure the joint object’s properties.
+     Add the joint to the scene by calling the scene SKPhysicsWorld object’s addJoint: method.
+     */
+    /*
+    SKPhysicsJointPin *newPin = [SKPhysicsJointPin jointWithBodyA:playerCharacter bodyB: mew anchor:(CGPointMake(150.0,150.0))];
+    [self.physicsWorld addJoint:newPin];
+     */
 }
 
 @end
