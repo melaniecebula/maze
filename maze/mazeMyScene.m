@@ -210,7 +210,7 @@
     tree.size = CGSizeMake(30.0, 30.0);
     tree.position = p;
     
-    tree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(33.0, 33.0)];
+    tree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(30.0, 30.0)];
     tree.physicsBody.dynamic = NO;
     tree.physicsBody.categoryBitMask = ColliderTypeWall;
     tree.physicsBody.collisionBitMask = ColliderTypeHero | ColliderTypeWall | ColliderTypePokemon;
@@ -235,7 +235,7 @@
      If necessary, configure the joint object’s properties.
      Add the joint to the scene by calling the scene SKPhysicsWorld object’s addJoint: method.
      */
-
+    
     SKPhysicsJointPin *newPin = [SKPhysicsJointPin jointWithBodyA:[contact bodyA] bodyB: [contact bodyB] anchor:(CGPointMake(150.0,150.0))];
     [self.physicsWorld addJoint:newPin];
     
