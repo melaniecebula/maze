@@ -15,6 +15,8 @@
     SKLabelNode *myLabel;
     SKSpriteNode *butterfree;
     SKSpriteNode *pikachu;
+    SKPhysicsJointPin *currentPin;
+    NSMutableArray *pokedexArray;
     int count;
 }
 + (SKPhysicsJointPin *)jointWithBodyA:(SKPhysicsBody *)bodyA bodyB:(SKPhysicsBody *)bodyB anchor:(CGPoint)anchor;
@@ -25,6 +27,8 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        
+        pokedexArray = [[NSMutableArray alloc] init];
         
         count = 0;
         
@@ -60,6 +64,7 @@
 
         
         mew = [SKSpriteNode spriteNodeWithImageNamed:@"mew_sprite.png"];
+        mew.name = @"mew";
         mew.size = CGSizeMake(15.0, 15.0);
         mew.position = CGPointMake(30.0, 400);
         mew.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
@@ -74,6 +79,7 @@
         
         
         butterfree = [SKSpriteNode spriteNodeWithImageNamed:@"butterfree.gif"];
+        butterfree.name = @"butterfree";
         butterfree.size = CGSizeMake(15.0, 15.0);
         butterfree.position = CGPointMake(30.0, 230);
         butterfree.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
@@ -88,6 +94,7 @@
         
         
         pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu.gif"];
+        pikachu.name = @"pikachu";
         pikachu.size = CGSizeMake(15.0, 15.0);
         pikachu.position = CGPointMake(130.0, 220);
         pikachu.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(15.0, 15.0)];
@@ -106,7 +113,7 @@
         [self createTreeWithPosition:(CGPointMake(30.0, 0.0))];
         
         //vertical column left of middle:
-        [self createTreeWithPosition:(CGPointMake(90.0, 50.0))];
+
         [self createTreeWithPosition:(CGPointMake(90.0, 80.0))];
         [self createTreeWithPosition:(CGPointMake(90.0, 110.0))];
         [self createTreeWithPosition:(CGPointMake(90.0, 140.0))];
@@ -223,22 +230,26 @@
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
-    NSLog(@"You found the pokemon!");
-    count = count + 1;
-    myLabel.text = [NSString stringWithFormat: @"Pokemon: %d", count];
-    /*
-     To use a physics joint, you follow these steps:
-     
-     Create two physics bodies.
-     Attach the physics bodies to a pair of SKNode objects in the scene.
-     Create a joint object using one of the subclasses listed in Table 1.
-     If necessary, configure the joint object’s properties.
-     Add the joint to the scene by calling the scene SKPhysicsWorld object’s addJoint: method.
-     */
+
+    if (![pokedexArray containsObject:[[[contact bodyB] node] name]]) {
+        [pokedexArray addObject:[[[contact bodyB] node] name]];
+        count = count + 1;
+        myLabel.text = [NSString stringWithFormat: @"Pokedex: %d", count];
+        
+    }
     
-    SKPhysicsJointPin *newPin = [SKPhysicsJointPin jointWithBodyA:[contact bodyA] bodyB: [contact bodyB] anchor:(CGPointMake(150.0,150.0))];
-    [self.physicsWorld addJoint:newPin];
+    
+    if (currentPin != NULL) {
+        [self.physicsWorld removeJoint:currentPin];
+    }
+    currentPin = [SKPhysicsJointPin jointWithBodyA:[contact bodyA] bodyB: [contact bodyB] anchor:(CGPointMake(150.0,150.0))];
+    [self.physicsWorld addJoint:currentPin];
+
+
+        
+    
     
 }
+
 
 @end
